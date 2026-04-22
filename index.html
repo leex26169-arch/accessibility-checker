@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+  <html lang="zh-CN">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>无障碍设计检查工具</title>
+      <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+      <div class="container">
+          <h1>无障碍设计检查工具</h1>
+          <p class="subtitle">基于 WCAG 2.1 标准</p>
+
+          <!-- 颜色对比度检查 -->
+          <section class="checker-section">
+              <h2>🎨 颜色对比度检查</h2>
+              <div class="color-inputs">
+                  <div>
+                      <label>背景色：</label>
+                      <input type="color" id="bgColor" value="#FFFFFF">
+                      <span id="bgColorValue">#FFFFFF</span>
+                  </div>
+                  <div>
+                      <label>文字色：</label>
+                      <input type="color" id="fgColor" value="#000000">
+                      <span id="fgColorValue">#000000</span>
+                  </div>
+              </div>
+              <button onclick="checkContrast()">检查对比度</button>
+              <div id="contrastResult" class="result"></div>
+          </section>
+
+          <!-- 色盲测试 -->
+          <section class="checker-section">
+              <h2>👁️  色盲友好性测试</h2>
+              <div class="color-inputs">
+                  <div>
+                      <label>测试颜色1：</label>
+                      <input type="color" id="color1" value="#FF0000">
+                  </div>
+                  <div>
+                      <label>测试颜色2：</label>
+                      <input type="color" id="color2" value="#00FF00">
+                  </div>
+              </div>
+              <button onclick="checkColorBlind()">检查色盲友好性</button>
+              <div id="colorBlindResult" class="result"></div>
+          </section>
+
+          <!-- 结果展示 -->
+          <section class="checker-section">
+              <h2>📋 检查报告</h2>
+              <div id="report" class="report"></div>
+          </section>
+      </div>
+
+      <script src="js/app.js"></script>
+  </body>
+  </html>
